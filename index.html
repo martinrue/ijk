@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IJK Kostkalkulilo</title>
+  <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+  <section class="content">
+    <header>
+      <h1>Kostkalkulilo</h1>
+    </header>
+
+    <section class="questions">
+      <table>
+        <tr>
+          <td>1. Mi loĝas en <span id="selected-country"></span></td>
+          <td>
+            <div class="selectbox" id="select-country">
+              Elekti...
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2. Mi havas</td>
+          <td>
+            <div class="inputbox">
+              <input type="text" id="jaroj" value="0" maxlength="2" />
+              <span>jarojn</span>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>3. Mi volas dormi kaj manĝi ĉe la kongresejo</td>
+          <td>
+            <div class="checkbox">
+              <input type="checkbox" id="dormi" />
+              <label for="dormi"></label>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>4. Mi volas 1-litan ĉambron</td>
+          <td>
+            <div class="checkbox">
+              <input type="checkbox" id="unulito" />
+              <label for="unulito"></label>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>5. Mi restos dum</td>
+          <td>
+            <div class="inputbox">
+              <input type="text" id="noktoj" value="7" maxlength="1" />
+              <span>noktoj</span>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>6. Mi estas individua membro de TEJO (krom la membroj kun gvidlibro) aŭ patrono de TEJO en 2017</td>
+          <td>
+            <div class="checkbox">
+              <input type="checkbox" id="tejo" />
+              <label for="tejo"></label>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>7. Mi prelegos aŭ preparos aktivaĵojn</td>
+          <td>
+            <div class="checkbox">
+              <input type="checkbox" id="prelegi" />
+              <label for="prelegi"></label>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>8. Mi komencis lerni Esperanton post la lasta IJK (ekde aŭgusto 2017 aŭ poste)</td>
+          <td>
+            <div class="checkbox">
+              <input type="checkbox" id="nova" />
+              <label for="nova"></label>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="result">
+      <div class="container">
+        <div class="content">
+          <h2>Via Kotizo:</h2>
+
+          <div class="empty">
+            Bonvolu respondi al la demandoj supre.
+          </div>
+
+          <ul>
+          </ul>
+
+          <div class="total">
+            <div class="cost" id="totalcost"></div>
+            <div class="label">Entute:</div>
+          </div>
+
+          <div class="antaŭpago">
+            Bonvolu noti, ke la minimuma antaŭpago estas 25€. Oni povas trovi pli detalan informon tie: <a href="http://ijk2018.tejo.org/pago/" target="_blank">ijk2018.tejo.org/pago</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      Ĉi tiu retpaĝo ne estas oficiala paĝo de TEJO. Bonvolu kontroli la plej ĝisdatajn kotizojn ĉe <a href="http://ijk2018.tejo.org/" target="_blank">ijk2018.tejo.org</a>
+    </footer>
+
+    <div class="countries-popup">
+      <div class="content">
+        <div class="country" data-stato="B">
+          Albanio
+        </div>
+
+        <div class="country" data-stato="A">
+          Andoro
+        </div>
+
+        <div class="country" data-stato="B">
+          Aŭstralio
+        </div>
+
+        <div class="country" data-stato="A">
+          Aŭstrio
+        </div>
+
+        <div class="country" data-stato="A">
+          Barejno
+        </div>
+
+        <div class="country" data-stato="A">
+          Belgio
+        </div>
+
+        <div class="country" data-stato="B">
+          Bosnio-Hercegovino
+        </div>
+
+        <div class="country" data-stato="B">
+          Brunejo
+        </div>
+
+        <div class="country" data-stato="B">
+          Bulgario
+        </div>
+
+        <div class="country" data-stato="B">
+          Ĉeĥio
+        </div>
+
+        <div class="country" data-stato="A">
+          Danio
+        </div>
+
+        <div class="country" data-stato="B">
+          Estonio
+        </div>
+
+        <div class="country" data-stato="A">
+          Finnlando
+        </div>
+
+        <div class="country" data-stato="A">
+          Francio
+        </div>
+
+        <div class="country" data-stato="A">
+          Germanio
+        </div>
+
+        <div class="country" data-stato="B">
+          Grekio
+        </div>
+
+        <div class="country" data-stato="B">
+          Hispanio
+        </div>
+
+        <div class="country" data-stato="B">
+          Hungario
+        </div>
+
+        <div class="country" data-stato="A">
+          Irlando
+        </div>
+
+        <div class="country" data-stato="A">
+          Islando
+        </div>
+
+        <div class="country" data-stato="A">
+          Israelo
+        </div>
+
+        <div class="country" data-stato="A">
+          Italio
+        </div>
+
+        <div class="country" data-stato="A">
+          Japanio
+        </div>
+
+        <div class="country" data-stato="A">
+          Kanado
+        </div>
+
+        <div class="country" data-stato="A">
+          Kataro
+        </div>
+
+        <div class="country" data-stato="B">
+          Kipro
+        </div>
+
+        <div class="country" data-stato="B">
+          Kroatio
+        </div>
+
+        <div class="country" data-stato="A">
+          Kuvajto
+        </div>
+
+        <div class="country" data-stato="B">
+          Latvio
+        </div>
+
+        <div class="country" data-stato="A">
+          Liĥtenŝtejno
+        </div>
+
+        <div class="country" data-stato="B">
+          Litovio
+        </div>
+
+        <div class="country" data-stato="A">
+          Luksemburgo
+        </div>
+
+        <div class="country" data-stato="B">
+          Makedonio
+        </div>
+
+        <div class="country" data-stato="B">
+          Malto
+        </div>
+
+        <div class="country" data-stato="A">
+          Monako
+        </div>
+
+        <div class="country" data-stato="B">
+          Montenegro
+        </div>
+
+        <div class="country" data-stato="A">
+          Nederlando
+        </div>
+
+        <div class="country" data-stato="A">
+          Norvegio
+        </div>
+
+        <div class="country" data-stato="B">
+          Nov-Zelando
+        </div>
+
+        <div class="country" data-stato="A">
+          Omano
+        </div>
+
+        <div class="country" data-stato="B">
+          Pollando
+        </div>
+
+        <div class="country" data-stato="B">
+          Portugalio
+        </div>
+
+        <div class="country" data-stato="B">
+          Rumanio
+        </div>
+
+        <div class="country" data-stato="A">
+          San-Marino
+        </div>
+
+        <div class="country" data-stato="A">
+          Saŭda Arabio
+        </div>
+
+        <div class="country" data-stato="B">
+          Serbio
+        </div>
+
+        <div class="country" data-stato="B">
+          Singapuro
+        </div>
+
+        <div class="country" data-stato="B">
+          Slovakio
+        </div>
+
+        <div class="country" data-stato="B">
+          Slovenio
+        </div>
+
+        <div class="country" data-stato="B">
+          Sud-Koreo
+        </div>
+
+        <div class="country" data-stato="A">
+          Svedio
+        </div>
+
+        <div class="country" data-stato="A">
+          Svisio
+        </div>
+
+        <div class="country" data-stato="B">
+          Tajvano
+        </div>
+
+        <div class="country" data-stato="B">
+          Turkio
+        </div>
+
+        <div class="country" data-stato="B">
+          Ukrainio
+        </div>
+
+        <div class="country" data-stato="A">
+          Unuiĝinta Reĝlando
+        </div>
+
+        <div class="country" data-stato="A">
+          Unuiĝintaj Arabaj Emirlandoj
+        </div>
+
+        <div class="country" data-stato="A">
+          Usono
+        </div>
+
+        <hr />
+
+        <div class="country" data-stato="C">
+          Alia Lando
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="index.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      app.init();
+    });
+  </script>
+</body>
+</html>
+
