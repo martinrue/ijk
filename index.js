@@ -3,9 +3,8 @@ var app = (function() {
   var $items;
   var $total;
   var $totalcost;
-
-  var $selectedCountry = $('#selected-country');
-  var $countriesPopup = $('.countries-popup');
+  var $selectedCountry;
+  var $countriesPopup;
 
   var data = {
     stato: '',
@@ -148,6 +147,8 @@ var app = (function() {
     $total = $('.result .total');
     $noto = $('.result .antaŭpago');
     $totalcost = $('#totalcost');
+    $selectedCountry = $('#selected-country');
+    $countriesPopup = $('.countries-popup');
 
     $('#select-country').on('click', function() {
       displayCountriesPopup(true);
@@ -202,6 +203,18 @@ var app = (function() {
     $('#nova').on('change', function() {
       data.nova = $(this).is(':checked');
       renderCosts();
+    });
+
+    $(document).keyup(function(e) {
+      if (e.keyCode === 27) {
+        displayCountriesPopup(false);
+      }
+    });
+
+    $countriesPopup.on('click', function(e) {
+      if (e.target === this) {
+        displayCountriesPopup(false);
+      }
     });
   };
 
