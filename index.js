@@ -118,7 +118,7 @@ var app = (function() {
       }
 
       if (items[i].discount) {
-        var discount = total * (items[i].discount / 100);
+        var discount = items[0].cost * (items[i].discount / 100);
         total -= discount;
         $items.append(createItem(items[i].description, -discount));
       }
