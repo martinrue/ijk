@@ -128,9 +128,12 @@ var app = (function() {
   };
 
   var formatCost = function(number) {
-    var text = number.toFixed(2).toString().replace(/\./g, ',');
-    var parts = text.split(',00');
-    return parts[0] + '€';
+    var text = number.toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+
+    return /00$/.test(text) ? (text.slice(0, -3) + '€') : text + '€';
   };
 
   var displayCountriesPopup = function(show) {
